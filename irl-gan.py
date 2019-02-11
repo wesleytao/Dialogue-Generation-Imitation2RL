@@ -46,7 +46,7 @@ ARGS = PARSER.parse_args()
 print(ARGS)
 
 gen_config.data_id=ARGS.data_id
-gen_config.data_dir = os.path.join('../dialogue-gan/data', ARGS.data_id)
+gen_config.data_dir = os.path.join('./data', ARGS.data_id)
 gen_config.emb_dim = ARGS.hidden_size
 gen_config.vocab_size=ARGS.vocab_size
 gen_config.ent_weight=ARGS.ent_weight
@@ -58,7 +58,7 @@ gen_config.testing=ARGS.testing_flag
 
 disc_config.data_id=ARGS.data_id
 disc_config.emb_dim = ARGS.hidden_size
-disc_config.data_dir = os.path.join('../dialogue-gan/data', ARGS.data_id, 'subdata')
+disc_config.data_dir = os.path.join('./data', ARGS.data_id, 'subdata')
 disc_config.vocab_size=ARGS.vocab_size
 disc_config.ent_weight=ARGS.ent_weight
 disc_config.exp_id=ARGS.exp_id
