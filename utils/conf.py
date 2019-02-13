@@ -11,7 +11,7 @@ data_id = 'dailydialog'
 adv = True
 teacher_forcing = True
 buckets = [(20, 10), (40, 20), (60, 30), (81, 30)]
-continue_train = False
+continue_train = True
 exp_id = 10
 testing_flag = False
 
@@ -106,5 +106,3 @@ class GSTConfig(object):
     steps_per_checkpoint = 200
     buckets =        [(5, 10), (10, 15), (20, 25), (40, 50)]
     buckets_concat = [(5, 10), (10, 15), (20, 25), (40, 50), (100, 50)]
-
-
