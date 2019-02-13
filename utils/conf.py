@@ -14,6 +14,7 @@ buckets = [(20, 10), (40, 20), (60, 30), (81, 30)]
 continue_train = True
 exp_id = 10
 testing_flag = False
+num_step_multi = 2
 
 # exp==4-> 4 layers GRU
 # configuration options for discriminator network
@@ -34,7 +35,7 @@ class disc_config(object):
     embed_dim = 512
     word_embedding = word_embedding_size
     pre_embed = pre_embed_flag
-    steps_per_checkpoint = 30
+    steps_per_checkpoint = 30*num_step_multi
     #hidden_neural_size = 128
     num_layers = 2
     name_model = "disc_model"
@@ -83,7 +84,7 @@ class gen_config(object):
     teacher_loss = "teacher_loss"
     reward_name = "reward"
     max_train_data_size = 0
-    steps_per_checkpoint = 20
+    steps_per_checkpoint = 20*num_step_multi
     buckets = buckets
     keep_prob = 0.8
 
@@ -103,6 +104,6 @@ class GSTConfig(object):
     tensorboard_dir = "./tensorboard/gst_log/"
     name_loss = "gst_loss"
     max_train_data_size = 0
-    steps_per_checkpoint = 200
+    steps_per_checkpoint = 200*num_step_multi
     buckets =        [(5, 10), (10, 15), (20, 25), (40, 50)]
     buckets_concat = [(5, 10), (10, 15), (20, 25), (40, 50), (100, 50)]
